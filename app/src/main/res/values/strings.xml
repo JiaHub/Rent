@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Rent</string>
+
+    <string name="start_time">开始时间</string>
+    <string name="end_time">截止时间</string>
+
+    <string name="start_to_end">=== ></string>
+
+    <string name="rent_month">单月租金：</string>
+    <string name="rent_water">期间水费：</string>
+    <string name="rent_electric">期间电费：</string>
+    <string name="rent_submit">计算房租：</string>
+    <string name="rent_days">入住天数：</string>
+    <string name="rent_result">计算结果：</string>
+    <string name="rent_time">计算时间：</string>
+
+    <string name="delete_all">删除全部</string>
+
+    <string name="rent_example">
+        日期计算案例：\n
+        2020年5月10日-2020年7月11日 入住天数：2月1天 \n\n
+        房租计算案例：\n
+        房租结果 = 月租金*（月数+天数/30）+期间水电费
+    </string>
+
+    <!--计算器-->
+    <string name="num_zero">0</string>
+    <string name="num_one">1</string>
+    <string name="num_tow">2</string>
+    <string name="num_three">3</string>
+    <string name="num_four">4</string>
+    <string name="num_five">5</string>
+    <string name="num_six">6</string>
+    <string name="num_seven">7</string>
+    <string name="num_eight">8</string>
+    <string name="num_nine">9</string>
+
+    <string name="operator_clear">C</string>
+    <string name="operator_plus">+</string>
+    <string name="operator_reduce">-</string>
+    <string name="operator_ride">×</string>
+    <string name="operator_divide">÷</string>
+    <string name="operator_back">删除</string>
+    <string name="operator_equal">=</string>
+    <string name="operator_remainder">%</string>
+    <string name="operator_point">.</string>
+
+    <string name="info">提示：目前仅能从左到右计算，无优先级！</string>
+
+    <string name="record_title">记录内容</string>
+
+</resources>

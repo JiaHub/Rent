@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <!--填充颜色-->
+            <solid android:color="@color/Gray"/>
+            <!--设置边框-->
+            <stroke android:width="0.2dp"
+                android:color="@color/Black40"/>
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/border" />
+</selector>

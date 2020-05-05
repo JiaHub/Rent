@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhh.rent.activity.RentActivity">
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/rent_start_time"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/transparent"
+            android:text="@string/start_time"
+            android:textColor="@color/bg_font_black"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:text="@string/start_to_end"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/BLUE"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/rent_end_time"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/transparent"
+            android:text="@string/end_time"
+            android:textColor="@color/bg_font_black"
+            android:textSize="20sp"/>
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/rent_month"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_gravity="center" />
+
+        <EditText
+            android:id="@+id/rent_month"
+            android:inputType="number"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/rent_water"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_gravity="center" />
+
+        <EditText
+            android:id="@+id/rent_water"
+            android:inputType="number"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/rent_electric"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_gravity="center" />
+
+        <EditText
+            android:id="@+id/rent_electric"
+            android:inputType="number"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
+    <Button
+        android:id="@+id/rent_submit"
+        android:textSize="20sp"
+        android:text="@string/rent_submit"
+        android:textColor="@color/black"
+        android:layout_margin="20dp"
+        android:background="@drawable/yuan_jv_wheat_white"/>
+
+    <TableRow>
+        <TextView
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/rent_days"
+            android:textColor="@color/black"
+            android:padding="10dp"/>
+
+        <TextView
+            android:textSize="20sp"
+            android:id="@+id/rent_days"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:padding="10dp"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/rent_result"
+            android:textColor="@color/black"
+            android:padding="10dp"/>
+
+        <TextView
+            android:textSize="20sp"
+            android:id="@+id/rent_result"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:padding="10dp"/>
+    </TableRow>
+
+
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/rent_example"
+        android:padding="10dp"/>
+
+</TableLayout>
