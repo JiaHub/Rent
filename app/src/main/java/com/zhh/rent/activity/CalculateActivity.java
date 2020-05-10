@@ -5,15 +5,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.zhh.rent.R;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -180,9 +177,7 @@ public class CalculateActivity extends AppCompatActivity {
         mTvResult.setText("");
     }
 
-    /**
-     * 还未添加结果的处理
-     */
+
     private void backContent() {
         if (content.length() > 0) content.deleteCharAt(content.length() - 1);  //参数是索引
         if (content.length() > 0) {
@@ -242,7 +237,6 @@ public class CalculateActivity extends AppCompatActivity {
             String str;
             for (int index = 0; index < content.length(); index++) {
                 str = String.valueOf(content.charAt(index));
-//                if (index==0 && str.equals("-")) continue;    //break跳到循环外，continue进行下一轮
                 if (str.equals("-")) {
                     if (index != 0) {
                         numbers.add(Float.parseFloat(content.substring(startIndex, index)));
@@ -294,14 +288,6 @@ public class CalculateActivity extends AppCompatActivity {
             return onlyNumberResult.contains(".0") ? onlyNumberResult.replace(".0", "") : onlyNumberResult;
         }
         try {
-            //方案一 没有优先级
-//            Float calculate_result = numbers.poll();
-//            while(numbers.size()>0){   //此处需要改进
-//                calculate_result = calculateByOperator(calculate_result,numbers.poll(),operators.poll());
-//            }
-//            String result = calculate_result.toString();
-//            return result.contains(".0")?result.replace(".0",""):result;
-
             //方案二 先乘除后加减，合二为一
             Stack<Float> numberStack = new Stack<>();
             Log.e("Numbers", "队列" + numbers.toString());
@@ -309,20 +295,20 @@ public class CalculateActivity extends AppCompatActivity {
             int index = 0;
             while (operators.size() != 0) {
                 String operator = operators.poll();
-                if (isPrior(operator)) {       //是加号就不管
+                if (isPrior(operator)) {
                     if (index == 0) {
                         numberStack.add(calculateByOperator(numbers.poll(), numbers.poll(), operator));
                         index+=1;
                         continue;
                     }
-                    //由于存在取余操作，所以位置不能乱
-                    numberStack.add(calculateByOperator(numberStack.pop(),numbers.poll() , operator));  //是高级的，且不是第一个，就取数值栈顶元素，与队列头部元素计算
+                    //位置不能乱
+                    numberStack.add(calculateByOperator(numberStack.pop(),numbers.poll() , operator));  //取数值栈顶元素，与队列头部元素计算
                 } else {
-                    if (!numbers.isEmpty()) numberStack.add(numbers.poll());     //这里需要一个一个的加入
+                    if (!numbers.isEmpty()) numberStack.add(numbers.poll());
                 }
                 index += 1;
             }
-//            numberStack.addAll(numbers);  //清理库存
+            numberStack.addAll(numbers);  //清理库存
             Float calculateResult = 0.0f;
             Log.e("Numbers","栈"+numberStack.toString());
             while (!numberStack.empty()) {
