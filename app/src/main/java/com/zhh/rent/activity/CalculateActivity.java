@@ -290,35 +290,35 @@ public class CalculateActivity extends AppCompatActivity {
         try {
             //方案二 先乘除后加减，合二为一
             Stack<Float> numberStack = new Stack<>();
-            Log.e("Numbers", "队列" + numbers.toString());
-            Log.e("Numbers", "操作队列" + operators.toString());
-            int index = 0;
-            while (operators.size() != 0) {
+            System.out.println("Numbers"+"队列" + numbers.toString());
+            System.out.println("Numbers"+"操作队列" + operators.toString());
+
+            //计算逻辑
+            while(!operators.isEmpty()) {
                 String operator = operators.poll();
-                if (isPrior(operator)) {
-                    if (index == 0) {
-                        numberStack.add(calculateByOperator(numbers.poll(), numbers.poll(), operator));
-                        index+=1;
-                        continue;
-                    }
-                    //位置不能乱
-                    numberStack.add(calculateByOperator(numberStack.pop(),numbers.poll() , operator));  //取数值栈顶元素，与队列头部元素计算
-                } else {
-                    if (!numbers.isEmpty()) numberStack.add(numbers.poll());
+                float param1 = numberStack.isEmpty()?numbers.poll():numberStack.pop();
+                float param2 = numbers.poll();
+
+                if(isPrior(operator)) {
+                    numberStack.add(calculateByOperator(param1,param2,operator));
+                }else {
+                    numberStack.add(param1);
+                    numberStack.add(param2);
                 }
-                index += 1;
             }
+
             numberStack.addAll(numbers);  //清理库存
             Float calculateResult = 0.0f;
-            Log.e("Numbers","栈"+numberStack.toString());
+            System.out.println("Numbers"+"栈"+numberStack.toString());
             while (!numberStack.empty()) {
                 Float f = numberStack.pop();
                 calculateResult = calculateResult + f;
             }
             String result = calculateResult.toString();
+            System.out.println("计算结果："+result);
             return result.contains(".0") ? result.replace(".0", "") : result;
         } catch (Exception e) {
-            Log.e("RentCalculateByQueue", e.getMessage());
+            System.out.println("RentCalculateByQueue"+ e.getMessage());
             return "错误";
         }
     }

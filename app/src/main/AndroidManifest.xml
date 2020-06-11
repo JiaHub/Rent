@@ -7,9 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/rent_logo"
+        android:icon="@drawable/rent"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/rent_logo"
+        android:roundIcon="@drawable/rent"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
